@@ -1,0 +1,21 @@
+{
+  "name": "perf-collab-app-ui",
+  "description": "The UI portion of the performance and collaboration apps",
+  "main": "src/app.ts",
+  "authors": [
+    "kcegbuna@spscommerce.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kegbuna/bi-portal",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webui-core": "https://github.com/SPSCommerce/webui-core.git#^2.4.6"
+  }
+}

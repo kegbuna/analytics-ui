@@ -1,0 +1,31 @@
+@import '../../_variables';
+
+.app-header {
+  background: #fff;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid $light-grey;
+}
+.nav-burger {
+  width: $app-header-height; // This is supposed to be a box so we use the same height all over
+  height: $app-header-height;
+  text-align: center;
+  background-color: $slate-grey;
+  cursor: pointer;
+  color: #fff;
+  line-height: $app-header-height;
+  font-size: 18px;
+
+  .fa {
+    color: #fff;
+  }
+}
+.app-header-title {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 0 0 0 .5rem;
+  cursor: default;
+  user-select: none;
+}

@@ -1,0 +1,165 @@
+﻿$primary-blue: #00AAE5;
+$deep-blue: #0079A5;
+$hover-blue: #0084b2;
+$cloud-formation-url: "https://d2d7gy8xnykrfi.cloudfront.net/style/v1.1.5";
+$banner-height: 45px;
+$nav-background: #1F282C;
+$page-title-height: 60px;
+$panel-border: 1px solid #cccccc;
+
+.sps-banner-with-links {
+    height: $banner-height;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+    line-height: $banner-height;
+    background-color: $primary-blue;
+    position: relative;
+    z-index: 10;
+
+    & > .logo {
+        height: $banner-height;
+        width: 90px;
+        background: url("https://d2d7gy8xnykrfi.cloudfront.net/style/v1.1.5/assets/img/logo-header.png") no-repeat;
+        float: left;
+    }
+    
+    & > .text-links {
+        margin-left: 20px;
+        float: left;
+
+        ul {
+            list-style: none;
+            margin:0;
+            padding:0;
+            height: $banner-height;
+            text-transform: uppercase;
+
+            li {
+                float: left;
+                animation: fadeIn .25s normal;
+                position: relative;
+                & > a {
+                    display: block;
+                    color: white;
+                    border: none;
+                    text-decoration: none;
+                    line-height: $banner-height;
+                    font-size: 10pt;
+                    padding: 0 15px;
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    transition: background-color .25s ease;
+
+                    &:hover {
+                        background-color: $hover-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .icon-links {
+        float: right;
+
+        ul {
+            list-style: none;
+            margin:0;
+            padding:0;
+            height: $banner-height;
+
+            li {
+                float: left;
+                height: 45px;
+
+                & > a {
+                    display: block;
+                    color: $deep-blue;
+                    border: none;
+                    line-height: $banner-height;
+                    font-size: .9rem;
+                    font-weight: 600;
+                    width: 55px;
+                    height: 45px;
+                    text-align: center;
+                    font-family: 'Times New Roman';
+                    cursor: pointer;
+                    &:hover {
+                        color: white;
+                        background-color: $hover-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .sps-admin-menu {
+        position: absolute;
+        top: 45px;
+        left: 100%;
+        margin-left: 0;
+        z-index: 9999;
+        transition: margin-left .4s ease;
+
+        &.admin-menu-active
+        {
+            margin-left: -202px;
+            ul
+            {
+                li
+                {
+                    
+                }
+            }
+        }
+        ul {
+            list-style: none;
+            margin:0;
+            border: solid 1px #cccccc;
+            font-size: 0.9rem;
+            margin: 2px 0 0 0;
+            padding: 0;
+            width: 200px;
+            border-radius: 3px;
+            background: white;
+
+            li {
+                display: block;
+                cursor: pointer;
+                line-height: 1.125rem;
+                margin: 0;
+                padding: 0;
+                & > a {
+                    display: block;
+                    color: #606A6E;
+                    line-height: 1.125rem;
+                    border: none;
+                    width:200px;
+                    padding: 0.875rem;
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: none;
+                        background: rgba(96, 106, 110, 0.075);
+                        color: #1F282C;
+                    }
+                }
+            }
+        }
+    }
+    .sps-page-indicator
+    {
+        width: 0;
+        height: 0;
+        margin: 0 auto;
+        border-left: .5rem transparent solid;
+        border-right: .5rem transparent solid;
+        border-bottom: .5rem #fff solid;
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

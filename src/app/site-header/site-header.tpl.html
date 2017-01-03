@@ -1,0 +1,56 @@
+﻿<nav class="sps-banner-with-links">
+    <div class="logo"></div>
+    <section class="text-links">
+        <ul ng-cloak>
+            <li>
+                <a href="/Home" target="_self" id="lnkHome">Home</a>
+            </li>
+            <li ng-if="header.user.features.indexOf('Performance Analytics') > -1 && header.user.accountType === 1">
+                <a href="/PerformanceAnalytics?app=Performance" id="lnkEnterpriseSupplier" name="lnkEnterprise"
+                   target="_blank">Performance</a>
+                <span class="sps-page-indicator ng-hide" ng-show="app == 'Performance'"></span>
+            </li>
+            <li ng-if="header.user.features.indexOf('Performance Analytics') > -1 && header.user.accountType === 2">
+                <a href="/PerformanceAnalytics/DefaultDashboard?app=Performance" id="lnkEnterpriseRetailer"
+                   name="lnkEnterprise" target="_self">Performance</a>
+                <span class="sps-page-indicator ng-hide" ng-show="app == 'Performance'"></span>
+            </li>
+            <li>
+                <a href="/Collaboration" target="_self" id="lnkCollab">Collaboration</a>
+                <span class="sps-page-indicator"></span>
+            </li>
+            <li>
+                <a href="/MyReports" target="_self" id="lnkMyReports">My Reports</a>
+            </li>
+        </ul>
+    </section>
+    <section class="icon-links">
+        <ul>
+            <li>
+                <a id="CollaborationNewMessage" href="/Collaboration/NewMessage">
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/Training" target="_self">
+                    <i class="fa fa-mortar-board fa-lg"></i>
+                </a>
+            </li>
+            <li id="sps-admin-menu-dropdown" ng-click="header.toggleAdminMenu($event)">
+                <a>
+                    <i class="fa fa-cog fa-lg"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="sps-admin-menu" ng-show="header.adminMenuOpen">
+        <ul id="admin-menu-links">
+            <li><a href="/Administration/ManageUsers" target="_self" id="lnkAdministration" name="lnkAdministration">Manage
+                Users</a></li>
+            <li><a href="/Administration/MyProfile" target="_self" id="lnkMyProfile">My Profile</a></li>
+            <li><a href="/Administration/ChangePassword" target="_self">Change Password</a></li>
+            <li><a href="/Administration/ChangeSecurityQuestion" target="_self">Change Security Question</a></li>
+            <li><a href="/Logout" target="_self">Sign out</a></li>
+        </ul>
+    </section>
+</nav>

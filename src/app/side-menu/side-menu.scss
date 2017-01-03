@@ -1,0 +1,159 @@
+@import '../variables';
+
+ // Sliding menu styles
+.side-menu {
+  background: $slate-grey;
+  color: $white;
+  position: absolute;
+  top: 0;
+  width: 15rem;
+  transition: transform .25s ease;
+
+  &.ng-hide-add, &.ng-hide-remove {
+    display: block !important;
+  }
+
+  &.ng-hide-add {
+    transform: translateX(0);
+
+    &.ng-hide-add-active {
+      transform: translateX(-14rem);
+    }
+  }
+
+  &.ng-hide-remove {
+    transform: translateX(-14rem);
+
+    &.ng-hide-remove-active {
+      transform: translateX(0);
+    }
+  }
+}
+
+.side-menu-section {
+  border-bottom: 1px solid $medium-grey;
+  transition: max-height .2s ease;
+  padding: .5rem;
+
+  &.ng-hide-add, &.ng-hide-remove {
+    display: table !important;
+    overflow: hidden;
+  }
+
+  &.ng-hide-add {
+    max-height: 200px;
+
+    &.ng-hide-add-active {
+      max-height: 0;
+    }
+  }
+
+  &.ng-hide-remove {
+    max-height: 0;
+
+    &.ng-hide-remove-active {
+      max-height: 200px;
+    }
+  }
+}
+
+.side-menu-header {
+  height: $app-header-height; // so it aligns with app header
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.side-menu-title {
+  font-size: 1.25rem;
+  flex-grow: 1;
+  cursor: default;
+  user-select: none;
+}
+
+.side-menu-icon {
+  height: $app-header-height/2; // keeps the svg in the center
+  width: $app-header-height; // to maintain ratio with header
+  text-align: center;
+}
+
+.side-menu-grip {
+  text-align: center;
+  width: .75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.side-menu-link-list {
+  padding: 0 0 .5rem 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.side-menu-link-item {
+  display: table-row;
+  width: 100%;
+  text-align: center;
+}
+
+.side-menu-link-anchor {
+  color: $light-grey;
+  display: flex;
+  transition: color .3s ease;
+
+  &:hover {
+    color: $light-blue;
+  }
+
+  &.active {
+    .side-menu-link-icon {
+      transition: color .3s ease;
+      color: $orange;
+    }
+
+    .side-menu-link-text {
+      transition: color .3s ease;
+      color: $white;
+    }
+  }
+}
+
+.side-menu-link-text {
+  flex-grow: 1;
+  text-align: left;
+}
+.side-menu-link-icon {
+  width: 40px;
+}
+.side-menu-partner-icon {
+  width: $app-header-height; // to match widthS
+}
+
+.side-menu-link-icon, .side-menu-partner-icon {
+  color: $light-blue;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.side-menu-link-img {
+  border-radius: 50%;
+  max-width: 2.5rem;
+  vertical-align: middle;
+}
+
+.side-menu-partner {
+  display: flex;
+  width: 100%;
+  padding: .75rem 0;
+
+}
+
+.side-menu-action-link {
+  width: 60px;
+}
+
+.side-menu-list-title {
+  color: $light-grey;
+  margin-left: .5rem;
+}

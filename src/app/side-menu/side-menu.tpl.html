@@ -1,0 +1,78 @@
+<div class="side-menu" ng-show="side.menuOpen">
+    <div class="side-menu-section side-menu-header">
+        <div class="side-menu-icon">
+            <img  (open)="" ng-src="{{side.iconSrc}}"/>
+        </div>
+        <div class="side-menu-title">
+            <span class="side-menu-title-text" ng-bind="side.titleText"></span>
+        </div>
+        <div class="side-menu-grip" ng-click="side.toggleMenu()">
+            <i class="fa fa-ellipsis-v"></i>
+        </div>
+    </div>
+    <div class="side-menu-section">
+        <div class="side-menu-partner col small-16" ng-show="side.selectedPartner">
+            <div class="side-menu-partner-icon">
+                <img class="side-menu-link-img" ng-src="{{side.selectedPartner.logoUrl}}" />
+            </div>
+            <span class="side-menu-link-text" ng-bind="side.selectedPartner.name"></span>
+            <a class="side-menu-action-link" ui-sref=".landing({ partnerAccountKey: null })" ng-click="side.selectPartner(null)">
+                <span>Change</span>
+            </a>
+        </div>
+        <input placeholder="Select a partner.." title="Select a partner.." type="text" ng-model="header.partnerQuery" />
+        <ul class="side-menu-link-list col small-16" ng-hide="side.selectedPartner">
+            <li class="side-menu-link-item" ng-repeat="partner in side.partners">
+                <a class="side-menu-link-anchor" ui-sref="{ partnerAccountKey: partner.accountKey }" ui-sref-active="active" ng-click="side.selectPartner(partner)">
+                    <div class="side-menu-partner-icon">
+                        <img class="side-menu-link-img" ng-src="{{partner.logoUrl}}" />
+                    </div>
+                    <span class="side-menu-link-text" ng-bind="partner.name"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="side-menu-section" ng-show="side.selectedPartner">
+        <ul class="side-menu-link-list col small-16">
+            <li class="side-menu-link-item">
+                <a class="side-menu-link-anchor" ui-sref="collaboration.insights" ui-sref-active="active">
+                    <div class="side-menu-link-icon">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <span class="side-menu-link-text">Insights</span>
+                </a>
+            </li>
+            <li class="side-menu-link-item">
+                <a class="side-menu-link-anchor" ui-sref="collaboration.history" ui-sref-active="active">
+                    <div class="side-menu-link-icon">
+                        <i class="fa fa-history"></i>
+                    </div>
+                    <span class="side-menu-link-text">My History List</span>
+                </a>
+            </li>
+            <li class="side-menu-link-item">
+                <a class="side-menu-link-anchor" ui-sref="collaboration.subscriptions" ui-sref-active="active">
+                    <div class="side-menu-link-icon">
+                        <i class="fa fa-bell-o"></i>
+                    </div>
+                    <span class="side-menu-link-text">Alerts and Subscriptions</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="side-menu-section" ng-show="side.selectedPartner">
+        <div ng-repeat="folder in side.mstrFolders" ng-if="folder.mstrObjects.length > 0">
+            <span class="side-menu-list-title" ng-bind="folder.title"></span>
+            <ul class="side-menu-link-list">
+                <li class="side-menu-link-item" ng-repeat="mstrObject in folder.mstrObjects">
+                    <a class="side-menu-link-anchor" ui-sref=".bi({ url: mstrObject.url })" ui-sref-active="active">
+                        <div class="side-menu-link-icon">
+                            <i class="fa" ng-class="side.iconMap[mstrObject.object_type]"></i>
+                        </div>
+                        <span class="side-menu-link-text" ng-bind="mstrObject.object_name"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
